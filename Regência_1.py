@@ -1,4 +1,3 @@
-from gzip import WRITE
 from manim import *
 
 
