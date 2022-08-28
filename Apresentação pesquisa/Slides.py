@@ -167,13 +167,10 @@ class cena0(Slide):
         self.play(FadeIn(relat))
         self.pause()
         
-        self.play(*[FadeOut(mob)for mob in self.mobjects])  
+        self.play(FadeOut(arrow_1),FadeOut(arrow_2),FadeOut(arrow_3),FadeOut(arrow_4),FadeOut(arrow_5),FadeOut(arrow_6),FadeOut(arrow_7),FadeOut(relat),FadeOut(feed),FadeOut(apre),FadeOut(anim),FadeOut(elab),FadeOut(ref_title))  
         
         self.pause()
-        self.wait()
-        
-class cena1(Slide):
-    def construct(self):
+
         #-------------------- Exemplo de animação --------------------
         pit = Text("Exemplo de animação")
         pit.generate_target()
@@ -290,10 +287,7 @@ class cena1(Slide):
         self.play(FadeOut(expression4), FadeOut(cr1), FadeOut(cr2), expression5.animate.next_to(expression, DOWN))
         self.play(Circumscribe(expression5))
         self.pause()       
-        self.wait()
-           
-class cena2(Slide):
-    def construct(self):         
+        self.play(*[FadeOut(mob)for mob in self.mobjects])  
         #-------------------- Cronograma --------------------
         crono_title = Text("Cronograma")
         crono_title.generate_target()
@@ -502,9 +496,6 @@ class cena2(Slide):
         self.pause()
         
         
-        
-        
-        
         self.play(*[FadeOut(mob)for mob in self.mobjects])        
         
         #-------------------- Resultados esperados --------------------
@@ -528,4 +519,5 @@ class cena2(Slide):
         self.play(Write(res2))     
         self.pause()
         self.play(*[FadeOut(mob)for mob in self.mobjects])  
+        self.pause()
         self.wait()
