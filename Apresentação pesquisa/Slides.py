@@ -1,21 +1,34 @@
+from ctypes.wintypes import DWORD
 from manim_presentation import Slide
 from manim import *
 
 class cena0(Slide):
     def construct(self):
         titulo=Text("CRIANDO ANIMAÇÕES PARA GEOMETRIA ORIENTADAS AO ENSINO \nMÉDIO USANDO A BIBLIOTECA PYTHON MANIM")
-        titulo.scale(0.6)
+        titulo.scale(0.5)
+
+        curso=Text("Pesquisa em educação matematica")
+        facul=Text("UFScar")
+        facul.next_to(curso,DOWN)
+        ano=Text("2022")
+        ano.next_to(facul,DOWN)
         
+        add=VGroup(curso,ano,facul)
+        add.scale(0.5)
+        add.next_to(titulo,DOWN*2)
         self.play(Write(titulo))
         self.pause()
         
+        self.play(Write(add))
+        self.pause()
+
         #-------------------- Objetivos --------------------
         obj_title = Text("Objetivos")
         obj_title.generate_target()
         obj_title.target.scale(0.6)
         obj_title.target.shift(UP*3.5)
         
-        self.play(FadeOut(titulo))
+        self.play(FadeOut(titulo),FadeOut(add))
         self.play(Write(obj_title))
         self.pause()
         self.play(MoveToTarget(obj_title))
@@ -23,9 +36,9 @@ class cena0(Slide):
         objetivo1=Text("Identêntificar e aplicar os diversos usos da biblioteca Manim em sala de aula")
         objetivo2=Text("Analisar a eficiência do uso das animações geradas pelo Manim em sala de aula")
         objetivo3=Text("Identificar a maneira mais eficiente de se usar animações em sala de aula")
-        objetivo1.scale(0.55)
-        objetivo2.scale(0.55)
-        objetivo3.scale(0.55)
+        objetivo1.scale(0.5)
+        objetivo2.scale(0.5)
+        objetivo3.scale(0.5)
         objetivo1.shift(UP*1.5)
         objetivo2.next_to(objetivo1,DOWN*1.5)
         objetivo3.next_to(objetivo2,DOWN*1.5)              
@@ -82,8 +95,8 @@ class cena0(Slide):
         elab_text=Text("Elaboração inicial da\nanimação com o professor")
         elab_icon=SVGMobject("handshake-solid.svg", color = WHITE, stroke_width= 2.0)
         
-        elab_icon.scale(0.4)
-        elab_text.scale(0.4)
+        elab_icon.scale(0.35)
+        elab_text.scale(0.35)
         elab_text.next_to(elab_icon, DOWN)   
         
         elab = Group(elab_text, elab_icon)
@@ -95,8 +108,8 @@ class cena0(Slide):
         anim_text=Text("Construção da animação")
         anim_icon=SVGMobject("laptop-code-solid.svg", color = WHITE, stroke_width= 2.0)
         
-        anim_icon.scale(0.4)
-        anim_text.scale(0.4)        
+        anim_icon.scale(0.35)
+        anim_text.scale(0.35)        
         anim_text.next_to(anim_icon, DOWN)        
         
         anim = Group(anim_icon, anim_text)
@@ -113,8 +126,8 @@ class cena0(Slide):
         apre_text=Text("Apresentação da animação")
         apre_icon=SVGMobject("person-chalkboard-solid.svg", color = WHITE, stroke_width= 2.0)
         
-        apre_icon.scale(0.4)
-        apre_text.scale(0.4)        
+        apre_icon.scale(0.35)
+        apre_text.scale(0.35)        
         apre_text.next_to(apre_icon, DOWN)        
         
         apre = Group(apre_icon, apre_text)
@@ -131,8 +144,8 @@ class cena0(Slide):
         feed_text=Text("Avaliação dos alunos")
         feed_icon=SVGMobject("file-lines-solid.svg", color = WHITE, stroke_width= 2.0)
         
-        feed_icon.scale(0.4)
-        feed_text.scale(0.4)        
+        feed_icon.scale(0.35)
+        feed_text.scale(0.35)        
         feed_text.next_to(feed_icon, DOWN)        
         
         feed = Group(feed_icon, feed_text)
@@ -150,8 +163,8 @@ class cena0(Slide):
         relat_text=Text("Relatório final")
         relat_icon=SVGMobject("file-lines-solid.svg", color = WHITE, stroke_width= 2.0)
         
-        relat_icon.scale(0.4)
-        relat_text.scale(0.4)        
+        relat_icon.scale(0.35)
+        relat_text.scale(0.35)        
         relat_text.next_to(relat_icon, DOWN)        
         
         relat = Group(relat_icon, relat_text)
@@ -509,12 +522,12 @@ class cena0(Slide):
         self.play(MoveToTarget(res_title))
         
         res1 = Text("Com o uso das animações esperamos ter uma visivel melhora no desempenho dos alunos\n dentro dos conteudos da geometria")
-        res1.scale(0.5)
+        res1.scale(0.4)
         res1.shift(UP)
         self.play(Write(res1))
         
         res2 = Text("Tambem esperamos conseguir analisar se há uma forma ideal de organizar as animações\n e apresentá-las em sala de aula")
-        res2.scale(0.5)
+        res2.scale(0.4)
         res2.next_to(res1,DOWN)
         self.play(Write(res2))     
         self.pause()
