@@ -2,7 +2,8 @@ from manim import *
 from manim_slides import Slide
 
 
-#============== Constants ==============
+#============== Strings Constants ==============
+
 TITULO = r"Semelhança de triângulos"
 AUTOR = r"Criado por: Kallel Fiori"
 NOME_DA_ESCOLA = r"Ufscar"
@@ -28,14 +29,7 @@ CONTEUDO_CURRICULAR = r"$\bullet$Conteúdo curricular: Semelhança de triângulo
 PRE_REQUISITOS_CURRICULARES = r"$\bullet$Pré-requisitos curriculares dos alunos: ângulos e medidas."
 AVALIACAO = r"$\bullet$Avaliação do aprendizado: A avaliação será composta da participação em aula e da lista de exercícios resolvida."
 
-
-
-
-
-
-
-
-#=======================================
+#==================================================
 
 
 class slide0(Slide):
@@ -186,3 +180,39 @@ class slide4(Slide):
         self.pause()
         self.play(*[FadeOut(mob)for mob in self.mobjects])
         self.wait()
+        
+
+
+class slide5(Slide):
+    def construct(self):
+        #Etapa 1
+        plano = Tex(r"Plano de aula - Etapa 1: 10-20 minutos",font_size=25)
+        plano.move_to(UP*3.5 + LEFT*4)
+        self.play(Write(plano))
+        
+        myTemplate = TexTemplate()
+        myTemplate.add_to_preamble(r"\usepackage{ragged2e}") 
+        
+        topico1 = Tex(r"$\bullet$Iniciar com a construção de diversos triângulos diferentes na lousa, e introduzir o conceito de semelhança.", tex_template=myTemplate, tex_environment="justify")
+        topico1.scale(0.65)
+        topico1.shift(UP*2)
+        self.play(Write(topico1))
+        self.pause()
+        
+               
+        
+        
+        
+        
+        
+        
+        #slied1_group = VGroup()
+        #slied1_group.scale(0.65)
+        #slied1_group.move_to(UP*2)
+        #slied1_group.arrange(DOWN,center=False,aligned_edge=LEFT)
+        #self.play(Write(slied1_group))
+        
+
+        self.pause()
+        self.play(*[FadeOut(mob)for mob in self.mobjects])
+        self.wait()   
