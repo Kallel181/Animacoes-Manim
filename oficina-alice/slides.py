@@ -4,6 +4,7 @@ from manim_slides import Slide
 
 class slide0(Slide):
     def construct(self):
+        #Apresentação do tema(slide0)
         self.wait()
         self.pause()
         titulo = Tex(r"O coelho e a revolução indrustrial").scale(1.5)
@@ -47,11 +48,11 @@ class slide0(Slide):
         self.pause()
         self.play(*[FadeOut(mob)for mob in self.mobjects])
         self.wait()
-  
-    
-    
+
+
+#image = ImageMobject("Path") use fadein to play 
+
+
 class slide1(Slide):
     def construct(self):
         pass
-    
-
